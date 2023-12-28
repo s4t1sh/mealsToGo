@@ -1,5 +1,5 @@
 import React from "react";
-import { Text} from "react-native";
+import { Text, View} from "react-native";
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
@@ -7,18 +7,17 @@ import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
 const Title = styled.Text`
-    margin-top: ${(props) => props.theme.space[3]};
+    margin-top: ${(props) => props.theme.space[2]};
     font-size: ${(props) => props.theme.fontSizes.title};
 `;
 
 const CardContainer = styled(Card)`
-    margin-bottom: ${(props) => props.theme.space[2]};
     margin-top: ${(props) => props.theme.space[3]};
 `;
 
 const Row = styled.View`
-    padding-top: ${(props) => props.theme.space[2]};
-    padding-bottom: ${(props) => props.theme.space[2]};
+    padding-top: ${(props) => props.theme.space[1]};
+    padding-bottom: ${(props) => props.theme.space[1]};
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -53,13 +52,13 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 
   return (
     <CardContainer >
-      <Card theme={{ colors: { elevation: {  level1: 'white' }}}}>
-        <Card.Cover source={{ uri: photos[0] }} />
+      <Card theme={{ colors: { elevation: {  level1: 'white' }}}} style={{borderRadius: 3}}>
+        <Card.Cover source={{ uri: photos[0] }} style={{borderRadius: 3}}/>
         <Card.Content>
           <Title variant="titleLarge">{name}</Title>
           <Row>
           <Rating>
-          {ratingArray.map((id)=>{
+          {ratingArray.map((_,id)=>{
             return <SvgXml key={id} xml={star} width={20} height={20}/>
           })}
           </Rating>
