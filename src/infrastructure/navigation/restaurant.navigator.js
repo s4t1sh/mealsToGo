@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator} from "@react-navigation/stack";
 import RestaurantScreen from "../../features/restaurant/screens/restaurant.screen";
 import RestaurantDetails from "../../features/restaurant/screens/restaurant-detail.screen";
+
 const RestaurantStack = createStackNavigator();
 
 export const RestaurantNavigator = () => {

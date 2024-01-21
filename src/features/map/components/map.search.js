@@ -25,6 +25,8 @@ const Search = () => {
       value={searchKeyword}
       style={styles.searchBar}
       elevation={3}
+      icon="map"
+      
       onSubmitEditing={()=>{
         search(searchKeyword)
       }}

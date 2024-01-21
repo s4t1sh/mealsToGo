@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,9 +9,11 @@ import {
 
 import RestaurantInfo from "../components/restaurant-info";
 import { RestaurantContext } from "../../../services/restaurant/restautant.context";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { ActivityIndicator } from "react-native-paper";
 import styled from "styled-components/native";
 import Search from "../components/search.component";
+import FavoutiteBar from "../../../components/favourites/favourite-bar.component";
 
 const styles = StyleSheet.create({
   container: {
@@ -30,12 +32,17 @@ const Loading = styled(ActivityIndicator)`
 `;
 const RestaurantScreen = ({ navigation }) => {
   const { restaurants, error, isLoading } = useContext(RestaurantContext);
+  const {favourites}  = useContext(FavouritesContext);
+  const [isFavouiteToggled, setIsFavouiteToggled] = useState(false);
+
   return (
     <SafeAreaView style={styles.container}>
-      <Search />
+      <Search isFavouiteToggled= {isFavouiteToggled} onFavouriteToggle = {()=> setIsFavouiteToggled(!isFavouiteToggled)}/>
       {isLoading && (
         <Loading animating={true} color={"#ff3647"} size={"large"} />
       )}
+
+      {isFavouiteToggled && <FavoutiteBar favourites={favourites} onNavigate={navigation.navigate}/>}
 
       <FlatList
         data={restaurants}

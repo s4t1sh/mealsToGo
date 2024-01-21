@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import Favourite from "../../../components/favourites/favourite.component";
 
 const Title = styled.Text`
     margin-top: ${(props) => props.theme.space[2]};
@@ -53,6 +54,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
   return (
     <CardContainer >
       <Card theme={{ colors: { elevation: {  level1: 'white' }}}} style={{borderRadius: 3}}>
+        <Favourite restaurant={restaurant}/>
         <Card.Cover source={{ uri: photos[0] }} style={{borderRadius: 3}}/>
         <Card.Content>
           <Title variant="titleLarge">{name}</Title>

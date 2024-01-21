@@ -1,11 +1,10 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import React from "react";;
 import { Ionicons, Entypo } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
 import { Text } from "react-native-paper";
 import {SafeArea} from "../../components/utitlity/safearea.utility"
 import {RestaurantNavigator} from "./restaurant.navigator";
-import MapScreen from "../../features/map/screens/map.screen";
+import {MapScreen} from "../../features/map/screens/map.screen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -17,7 +16,7 @@ const Settings = () => (
 
 const AppNavigator = () => {
   return (
-    <NavigationContainer>
+
       <Tab.Navigator
         activeColor="tomato"
         inactiveColor="gray"
@@ -66,7 +65,7 @@ const AppNavigator = () => {
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
+
   );
 };
 

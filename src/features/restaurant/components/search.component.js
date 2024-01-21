@@ -11,14 +11,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const Search = () => {
+const Search = ({isFavouiteToggled, onFavouriteToggle}) => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
   return (
     <Searchbar
       placeholder="Search for places"
-      value={searchKeyword}
+      icon={isFavouiteToggled ? 'heart' : 'heart-outline'}
+      onIconPress={onFavouriteToggle}
+      value={keyword}
       style={styles.searchBar}
       elevation={3}
       onSubmitEditing={()=>{
