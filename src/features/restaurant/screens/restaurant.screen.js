@@ -37,6 +37,7 @@ const RestaurantScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+
       <Search isFavouiteToggled= {isFavouiteToggled} onFavouriteToggle = {()=> setIsFavouiteToggled(!isFavouiteToggled)}/>
       {isLoading && (
         <Loading animating={true} color={"#ff3647"} size={"large"} />

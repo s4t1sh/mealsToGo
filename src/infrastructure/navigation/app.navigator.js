@@ -5,6 +5,7 @@ import { Text } from "react-native-paper";
 import {SafeArea} from "../../components/utitlity/safearea.utility"
 import {RestaurantNavigator} from "./restaurant.navigator";
 import {MapScreen} from "../../features/map/screens/map.screen";
+import { AccountNavigator } from "./account.navigator";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -64,6 +65,7 @@ const AppNavigator = () => {
             ),
           }}
         />
+
       </Tab.Navigator>
 
   );

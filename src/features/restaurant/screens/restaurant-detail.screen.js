@@ -4,6 +4,7 @@ import RestaurantInfo from "../components/restaurant-info";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native-gesture-handler";
 
+
 const RestaurantDetails = ({route }) => {
   const { restaurant } = route.params;
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
