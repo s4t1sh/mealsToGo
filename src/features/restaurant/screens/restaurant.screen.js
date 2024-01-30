@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import RestaurantInfo from "../components/restaurant-info";
+import { FadeInView } from "../../../components/animations/fade.animation";
 import { RestaurantContext } from "../../../services/restaurant/restautant.context";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { ActivityIndicator } from "react-native-paper";
@@ -38,13 +39,15 @@ const RestaurantScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
 
+      
+
       <Search isFavouiteToggled= {isFavouiteToggled} onFavouriteToggle = {()=> setIsFavouiteToggled(!isFavouiteToggled)}/>
       {isLoading && (
         <Loading animating={true} color={"#ff3647"} size={"large"} />
       )}
 
       {isFavouiteToggled && <FavoutiteBar favourites={favourites} onNavigate={navigation.navigate}/>}
-
+      <FadeInView>
       <FlatList
         data={restaurants}
         renderItem={({ item }) => {
@@ -56,6 +59,7 @@ const RestaurantScreen = ({ navigation }) => {
         }}
         key={(item) => item.name}
       />
+      </FadeInView>
     </SafeAreaView>
   );
 };

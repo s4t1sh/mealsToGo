@@ -5,7 +5,7 @@ import { Text } from "react-native-paper";
 import {SafeArea} from "../../components/utitlity/safearea.utility"
 import {RestaurantNavigator} from "./restaurant.navigator";
 import {MapScreen} from "../../features/map/screens/map.screen";
-import { AccountNavigator } from "./account.navigator";
+import { SettingsNavigator } from "./settings.navigator";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -53,7 +53,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Settings"
-          component={Settings}
+          component={SettingsNavigator}
           options={{
             tabBarLabel: "Settings",
             tabBarIcon: ({ focused }) => (
