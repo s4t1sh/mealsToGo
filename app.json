@@ -21,6 +21,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.v_satish.mealsToGo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "59fa89bf-173c-4282-958c-56fc7d97d9b0"
       }
     }
   }
